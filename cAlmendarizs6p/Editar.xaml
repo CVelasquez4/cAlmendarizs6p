@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cAlmendarizs6p.Editar"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="10" Padding="10">
+                <Label x:Name="lblMensaje"/>
+                <Label Text="Codigo"/>
+                <Entry x:Name="lblCodigo" Placeholder="Codigo"/>
+                <Label Text="Nombre"/>
+                <Entry x:Name="lblNombre" Placeholder="Nombre"/>
+                <Label Text="Apellido"/>
+                <Entry x:Name="lblApellido" Placeholder="Apellido"/>
+                <Label Text="Edad"/>
+                <Entry x:Name="lblEdad" Placeholder="Edad"/>
+                <Button x:Name="btnActualizar" Text="Actualizar" Clicked="btnActualizar_Clicked" BackgroundColor="LawnGreen"/>
+                <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" BackgroundColor="Red"/>
+                <Button x:Name="btnRegresar" Text="REGRESAR" Clicked="btnRegresar_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
