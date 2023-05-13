@@ -33,6 +33,8 @@ namespace cAlmendarizs6p
 
         private void btnRegistro_Clicked(object sender, EventArgs e)
         {
+            var mensaje = "BIENVENIDO";
+            DependencyService.Get<Mensaje>().longAlert(mensaje);
             Navigation.PushAsync(new Registro());
         }
 

@@ -1,21 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="cAlmendarizs6p.MainPage"
-             NavigationPage.HasNavigationBar="False">
-    
-        <StackLayout>
+             x:Class="cAlmendarizs6p.MainPage" NavigationPage.HasNavigationBar="False">
+    <StackLayout>
             <Label Text="Consumir web Service GET" HorizontalTextAlignment="Center" FontSize="20"/>
             <Label x:Name="texto" Text=""/>
             <Button Text="Consultar" x:Name="btnGet" Clicked="btnGet_Clicked"/>
         <Button Text="Registro" x:Name="btnRegistro" Clicked="btnRegistro_Clicked"/>
-            <ListView x:Name="MyListView" ItemSelected="MyListView_ItemSelected">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Text="ID" FontSize="16" Grid.Row="0" Grid.Column="0"/>
+            <Label Text="Nombre" FontSize="16" Grid.Row="0" Grid.Column="1"/>
+            <Label Text="Apellido" FontSize="16" Grid.Row="0" Grid.Column="2"/>
+            <Label Text="Edad" FontSize="16" Grid.Row="0" Grid.Column="3"/>
+        </Grid>
+        <Label Text="--------------------------------------------------------------------------------------------------"/>
+
+        <ListView x:Name="MyListView" ItemSelected="MyListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
-                                <Label x:Name="lblnombre" Text="{Binding nombre}"/>
-                                <Label x:Name="lblapellido" Text="{Binding apellido}"/>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="lblcodigo" Text="{Binding codigo}" Grid.Row="0" Grid.Column="0"/>
+                                <Label x:Name="lblnombre" Text="{Binding nombre}" Grid.Row="0" Grid.Column="1"/>
+                                <Label x:Name="lblapellido" Text="{Binding apellido}" Grid.Row="0" Grid.Column="2"/>
+                                <Label x:Name="lbledad" Text="{Binding edad}" Grid.Row="0" Grid.Column="3"/>
+                            </Grid>
+                            
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
